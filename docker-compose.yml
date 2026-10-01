@@ -1,0 +1,12 @@
+services:
+  api:
+    build:
+      context: .
+      args:
+        APP_VERSION: local
+    image: task-api:local
+    ports:
+      - "8000:8000"
+    environment:
+      LOG_LEVEL: DEBUG
+    restart: unless-stopped
