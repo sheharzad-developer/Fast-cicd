@@ -11,6 +11,8 @@ RUN python -m venv /opt/venv \
 # ---------- Stage 2: runtime ----------
 FROM python:3.12-slim AS runtime
 
+RUN apt-get update && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
+
 ARG APP_VERSION=dev
 ENV PATH="/opt/venv/bin:$PATH" \
     PYTHONDONTWRITEBYTECODE=1 \
