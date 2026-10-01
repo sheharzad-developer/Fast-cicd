@@ -96,6 +96,7 @@ jobs:
         with:
           context: .
           platforms: linux/amd64
+          provenance: false
           push: true
           tags: ${{ steps.meta.outputs.image }}
           build-args: APP_VERSION=${{ github.sha }}
